@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>About Us - ResumeScoreAI</title>
+{% endblock title %}
+
+{% block links %}
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+{% endblock links %}
+
+{% block body %}
+<div class="about-container">
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="text-center mb-5">About ResumeScoreAI</h1>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <p class="lead text-center">
+                        Empowering job seekers with intelligent resume optimization through AI-powered analysis
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Our Mission</h2>
+                    <p>
+                        At ResumeScoreAI, we're committed to revolutionizing the job application process. Our mission is to help job seekers optimize their resumes for Applicant Tracking Systems (ATS) while maintaining the human touch that makes each candidate unique.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h2>What We Do</h2>
+                    <p>
+                        We provide cutting-edge AI-powered resume analysis that helps you:
+                    </p>
+                    <ul>
+                        <li>Match your resume with specific job descriptions</li>
+                        <li>Optimize for ATS compatibility</li>
+                        <li>Improve your chances of landing interviews</li>
+                        <li>Highlight your key skills and achievements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Us</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-robot mb-3"></i>
+                        <h3>Advanced AI Technology</h3>
+                        <p>State-of-the-art algorithms to analyze and score your resume</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-bolt mb-3"></i>
+                        <h3>Instant Results</h3>
+                        <p>Get immediate feedback and actionable improvements</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-chart-line mb-3"></i>
+                        <h3>Proven Success</h3>
+                        <p>Helping candidates increase their interview success rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Optimize Your Resume?</h2>
+            <p class="mb-4">Join thousands of successful job seekers who have improved their resumes with ResumeScoreAI</p>
+            <a href="/" class="btn btn-primary btn-lg">Get Started Now</a>
+        </div>
+    </section>
+</div>
+{% endblock body %}

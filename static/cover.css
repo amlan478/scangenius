@@ -1,0 +1,265 @@
+/* Add this at the top of your cover.css file */
+.containerf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px; /* Add top margin for spacing */
+    padding: 20px;
+}
+
+.heading {
+    color: #000000; /* Black color for better visibility */
+    font-family: "Mooli", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px; /* Add bottom margin for spacing */
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Add animation to make the heading more engaging */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.heading {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.containerf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    background-color: rgb(0, 0, 0);
+    padding: 25px;
+    border-radius: 25px;
+    width: 900px;
+    height:650px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid rgb(252, 67, 5);
+}
+
+form:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.formitem img {
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+    position: relative;
+    left: -17px;
+    margin-left: 5px;
+}
+.formitem {
+    display: flex;
+    margin-bottom: 8px;
+}
+.formitem .inputfield {
+    border-radius: 7px;
+    border: none;
+    width: 100%;
+    resize: none;
+    font-family: "Mooli", sans-serif;
+    color: rgb(0, 0, 0);
+}
+textarea {
+    height: 70px;
+}
+
+h2 {
+    color: rgb(232, 232, 232);
+    padding: 8px;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    top: -8px;
+    font-family: "Mooli", sans-serif;
+}
+
+.buttons {
+    display: flex;
+    gap: 35px;
+    position: relative;
+    top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.buttons button {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+/* Hover effect with animated gradient */
+
+.buttons button:hover {
+    background: #b20710;
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(229, 9, 20, 0.4);
+}
+.Second {
+    color: rgb(252, 252, 252);
+    font-family: "Mooli", sans-serif;
+    position: relative;
+    top: -30px;
+}
+
+.Style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.Resumeinput {
+    display: flex;
+    position: relative;
+}
+
+h5 {
+    color: white;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}
+.fileclass {
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    top: 12px;
+    background-color: white;
+    height:40%;
+    width:10px;
+}
+
+.buttons{
+    position: relative;
+    top:-30px;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.9); }
+}
+
+.Second {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    animation: fadeInOut 3s infinite; /* Adjust duration as needed */
+}
+
+.covericon{
+  margin:0;
+  position: relative;
+  left:-40px;
+}
+.heading{
+  color:rgb(0, 0, 0);
+  font-family: "Mooli", sans-serif;
+  font-size: larger;
+}
+
+input[type="file"]{
+  color:white;
+}
+
+@media (max-width: 768px) {
+    .containerf {
+        padding-top: 150px;  /* Increased from 100px to create more space */
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 20px; /* Add bottom margin for spacing */
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 90%;         /* Changed from 54vh to percentage */
+        height: auto;
+        padding: 15px;      /* Reduced padding */
+        margin: 0 auto;
+        max-width: 500px;   /* Add max-width for larger phones */
+        position: relative;  /* Add relative positioning */
+        top: 20px;          /* Move form down slightly */
+        margin-bottom: 40px; /* Add bottom margin */
+    }
+
+    .formitem {
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .formitem img {
+        height: 25px;    /* Reduced icon size */
+        width: 25px;
+        left: -10px;     /* Adjusted position */
+    }
+
+    .formitem .inputfield {
+        padding: 8px;    /* Added padding for better touch targets */
+        font-size: 16px; /* Readable font size on mobile */
+    }
+
+    textarea {
+        height: 60px;   /* Slightly reduced height */
+    }
+
+    .buttons {
+        gap: 15px;      /* Reduced gap */
+        top: 0;         /* Remove top spacing */
+        flex-wrap: wrap; /* Allow buttons to wrap */
+    }
+
+    .buttons button {
+        padding: 10px 15px;
+        font-size: 14px;
+        width: 100%;     /* Full width buttons */
+        max-width: 200px;
+    }
+
+    .Second {
+        font-size: 18px; /* Reduced font size */
+        top: 0;          /* Remove top spacing */
+        margin: 15px 0;
+    }
+
+    h2 {
+        font-size: 20px; /* Reduced heading size */
+        padding: 6px;
+    }
+
+    .covericon {
+        left: -20px;    /* Adjusted position */
+    }
+
+    .heading {
+        position: relative;
+        z-index: 2;         /* Ensure heading stays above form */
+        margin-bottom: 30px; /* Add space below heading */
+    }
+}

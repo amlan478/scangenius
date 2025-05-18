@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+    {% block title %}
+        
+    
+    <title>ResumeScoreAI</title>
+    {% endblock title %}
+    {% block links %}
+        
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+{% endblock links %}
+
+{% block body %}
+    
+
+
+    <div class="containerd">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form class="upload" method="post" enctype="multipart/form-data" action="/atsscore">
+            <div class="file">
+                <div class="h1"><h1>Applicant Tracking System (ATS) Score!</h1></div>
+                <label for="avatar" class="uploadlabel">Upload Resume:</label><br>
+                <div class="input-file">
+                    <input type="file" id="avatar" name="resume" required /><br>
+                </div>
+            </div>
+            <div class="job">
+                <label for="Job-title" class="joblabel">Job Description:</label><br>
+                <textarea name="job-desc" class="jobtext" required placeholder="Enter Job Description" rows="4" cols="50"></textarea><br>
+
+            </div>
+            <div class="submit">
+                <button type="submit" class="submitbutton">Score!</button><br>
+            </div>
+            
+            
+        </form>
+    </div>
+    {% endblock body %}

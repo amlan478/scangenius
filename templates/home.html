@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+    {% block title %}
+        <title>Home Page</title>
+    {% endblock title %}
+    {% block links %}
+        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    
+<link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
+<link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+{% endblock links %}
+
+    
+
+{% block body %}
+    
+
+
+    <div class="superContainer">
+        <div class="hero" id="hero">
+            <div class="leftpart">
+                <h1>Welcome to <br>ScanGenius.ai</h1>
+                <p>Unlock Your Career Potential with AI-Powered Tools!📈</p>
+            </div>
+            <div class="right">
+                <img src="../static/hero1.png" alt="image">
+            </div>
+        </div>
+        
+        <div class="atsscore" id="atsscore">
+         
+            <div class="leftats">
+                <h1 class="ats">ATS SCORE</h1>
+                <h1>Want to land your dream job fast? <br>Tired of resume rejections?</h1>
+                <p>Optimize your resume in seconds with <span class="red">AI-powered ATS scoring</span> and <span class="red">expert feedback!</span></p>
+                <div class="button">
+                    <a href="/atsscore"><button action="">Upload Resume & Get Instant Score!</button></a>
+                </div>
+                <p class="support">We will never share your information with anyone!😎 </p>
+            </div>
+        
+            <div class="rightats">
+                <img src="../static/HIRED (1).png" alt="resume">
+            </div>
+        </div>
+            <div class="atsguide" id="atsguide">
+                <h1 class="ats">How Ai Powered <span class="red">ATS Scoring</span> works?</h1>
+                <div class="cardcontainer">
+                    <div class="item">
+                        <h2><span class="red">Step 1:</span></h2>
+                        <p>Upload Your <span class="red">Resume</span><br>(PDF or Image)<br> and <span class="red">Job Description.</span></p>
+                        <img src="../static/My Video-1.gif" alt="step1">
+                    </div>
+                    <div class="item">
+                        <h2><span class="red">Step 2:</span></h2>
+                        <p>AI Scans & Scores It <br> Instantly (Identifies ATS<br> ranking & errors)</p>
+                        <img src="../static/My Video-3.gif" alt="step2"  class="img2">
+                    </div>
+                    <div class="item">
+                        <h2><span class="red">Step 3:</span></h2>
+                        <p>Get Expert Suggestions <br>(Tailored to your job role)</p>
+                        <img src="../static/2.gif" alt="step3">
+                    </div>
+                    <div class="item">
+                        <h2><span class="red">Step 4:</span></h2>
+                        <p> Apply With Confidence!<br> (Land your dream job faster)</p>
+                        <img src="../static/3.png" alt="step1" class="img4">
+                    </div>
+
+                </div>
+                <div class="button">
+                    <a href="/atsscore"><button>Upload Resume & Get Instant Score!</button></a>
+                </div>
+            </div>
+
+            <div class="aicover" id="coverletter">
+                <div class="coverleft">
+                    <img src="../static/4714173.jpg" alt="img">
+                </div>
+                <div class="coverright">
+                    <h1 class="heading">Ai Cover letter</h1>
+                    <h1>Struggling to write the perfect cover letter?</h1>
+                    <p>Let <span class="red">AI</span> craft a <span class="red">professional, job-winning cover letter</span> in seconds!</p>
+                    <div class="button">
+                        <a href="/coverletter"><button>Generate My Cover Letter Now!</button></a>
+                    </div>
+                    <p>We will never share your information with anyone! 😎</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% endblock body %}

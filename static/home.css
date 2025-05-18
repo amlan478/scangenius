@@ -1,0 +1,503 @@
+/* Existing styles from home.css (base styles, unchanged) */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.superConatiner, .superContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 2000px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 800px;
+  width: 100%;
+  margin-bottom: 170px;
+  padding-top: 130px;
+}
+
+.leftpart {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-top: 80px;
+}
+
+.leftpart h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", sans-serif;
+  font-size: 80px;
+  color: red;
+}
+
+.leftpart p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  position: relative;
+  bottom: 30px;
+}
+
+.right {
+  padding: 10px;
+}
+
+.right img {
+  height: 400px;
+  width: 400px;
+  position: relative;
+  top: 30px;
+}
+
+.atsscore {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 700px;
+  padding: 10px;
+  width: 100%;
+}
+
+.rightats {
+  padding: 10px;
+}
+
+.rightats img {
+  height: 600px;
+  width: 500px;
+}
+
+.leftats {
+  padding: 10px;
+}
+
+.leftats h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", sans-serif;
+  font-size: 50px;
+  color: red;
+}
+
+.leftats p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.leftats button {
+  border: none;
+  font-family: fantasy;
+  font-size: 25px;
+  background-color: red;
+  width: auto;
+  border-radius: 5px;
+  padding: 8px;
+  color: white;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.leftats button:hover {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+.leftats .ats {
+  color: black;
+}
+
+.leftats .support {
+  font-size: 16px;
+}
+
+.atsguide {
+  display: flex;
+  flex-direction: column;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  height: 700px;
+  padding: 10px;
+  width: 100%;
+}
+
+.atsguide h1 {
+  position: relative;
+  left: 120px;
+  width: 600px;
+  padding: 10px;
+  margin-bottom: 50px;
+  position: relative;
+  top: 40px;
+}
+
+.cardcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.item img {
+  width: 200px;
+  height: 250px;
+}
+
+.item {
+  border-radius: 12px;
+  border: 6px solid rgb(255, 0, 0);
+  width: auto;
+  height: 400px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.item .img4 {
+  width: 180px;
+  height: 200px;
+  position: relative;
+  top: 20px;
+}
+
+.atsguide button {
+  border: none;
+  font-family: fantasy;
+  font-size: 25px;
+  background-color: red;
+  width: auto;
+  border-radius: 5px;
+  padding: 8px;
+  color: white;
+  margin-top: 10px;
+  position: relative;
+  left: 38%;
+  top: 20px;
+}
+
+.atsguide button:hover {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+.aicover {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 750px;
+  width: 100%;
+}
+
+.coverleft img {
+  height: 600px;
+  width: 600px;
+}
+
+.coverright {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: auto;
+}
+
+.coverright h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", sans-serif;
+  font-size: 50px;
+  color: red;
+  width: 700px;
+}
+
+.coverright .heading {
+  color: black;
+  width: 300px;
+}
+
+.coverright p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.aicover button {
+  border: none;
+  font-family: fantasy;
+  font-size: 25px;
+  background-color: red;
+  width: auto;
+  border-radius: 5px;
+  padding: 8px;
+  color: white;
+}
+
+.aicover button:hover {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+/* --- IMPROVED RESPONSIVE SECTION --- */
+
+/* --- MEDIA QUERY FOR TABLETS (768px - 1024px) --- */
+@media (max-width: 1024px) {
+  .superConatiner, .superContainer {
+    height: auto;
+  }
+  
+  .leftpart h1 {
+    font-size: 60px;
+  }
+  
+  .right img {
+    height: 350px;
+    width: 350px;
+  }
+  
+  .rightats img {
+    height: 500px;
+    width: 400px;
+  }
+  
+  .coverleft img {
+    height: 500px;
+    width: 500px;
+  }
+  
+  .coverright h1 {
+    width: 500px;
+  }
+  
+  .atsguide h1 {
+    left: 5%;
+    width: 90%;
+  }
+  
+  .atsguide button {
+    left: 30%;
+  }
+}
+
+/* --- MEDIA QUERY FOR MOBILE DEVICES (< 768px) --- */
+@media (max-width: 768px) {
+  /* General container adjustments */
+  .superConatiner, .superContainer {
+    height: auto;
+    position: static;
+    margin-top:1300px;
+                         /* Remove the top:500px positioning */
+  }
+  
+  /* Section height adjustments */
+  .hero, .atsscore, .atsguide, .aicover {
+    height: auto;
+    padding: 40px 15px;
+    margin-bottom: 20px;
+  }
+  
+  /* Section layout adjustments */
+  .hero, .atsscore, .aicover {
+    flex-direction: column;
+  }
+  
+  /* --- Hero Section --- */
+  .leftpart {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .leftpart h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .leftpart p {
+    font-size: 18px;
+    position: static;
+    margin-top: 10px;
+  }
+  
+  .right img {
+    width: 300px;
+    height: 300px;
+    position: static;
+  }
+  
+  /* --- ATS Score Section --- */
+  .leftats {
+    text-align: center;
+    order: 1; /* Move text below image on mobile */
+    margin-top: 20px;
+  }
+  
+  .rightats {
+    order: 0; /* Move image above text on mobile */
+  }
+  
+  .rightats img {
+    width: 300px;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .leftats h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  
+  .leftats p {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+  
+  /* --- ATS Guide Section --- */
+  .atsguide {
+    text-align: center;
+  }
+  
+  .atsguide h1 {
+    position: static;
+    width: 100%;
+    font-size: 32px;
+    margin: 0 0 30px 0;
+    text-align: center;
+    padding: 0 10px;
+  }
+  
+  .cardcontainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 30px;
+    padding: 15px;
+  }
+  
+  .item img, .item .img4 {
+    width: 150px;
+    height: auto;
+    position: static;
+    margin: 10px auto;
+  }
+  
+  .atsguide button {
+    position: static;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  /* --- AI Cover Letter Section --- */
+  .aicover {
+    text-align: center;
+  }
+  
+  .coverleft {
+    order: 0; /* Move image above text on mobile */
+  }
+  
+  .coverright {
+    order: 1; /* Move text below image on mobile */
+    width: 100%;
+  }
+  
+  .coverleft img {
+    width: 300px;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .coverright h1 {
+    font-size: 32px;
+    width: 100%;
+    line-height: 1.2;
+  }
+  
+  .coverright .heading {
+    width: 100%;
+  }
+  
+  /* Buttons for all sections */
+  .leftats button, .atsguide button, .aicover button {
+    font-size: 20px;
+    padding: 8px 15px;
+    margin: 15px auto;
+    display: block;
+  }
+}
+
+/* --- MEDIA QUERY FOR SMALL MOBILE DEVICES (< 480px) --- */
+@media (max-width: 480px) {
+  /* Headings */
+  .leftpart h1, 
+  .leftats h1, 
+  .atsguide h1, 
+  .coverright h1 {
+    font-size: 28px;
+  }
+  
+  /* Paragraph text */
+  .leftpart p, 
+  .leftats p, 
+  .coverright p {
+    font-size: 16px;
+  }
+  
+  /* Images */
+  .right img, 
+  .rightats img, 
+  .coverleft img {
+    width: 250px;
+  }
+  
+  /* Cards */
+  .item {
+    width: 90%;
+  }
+  
+  /* Buttons */
+  .leftats button, 
+  .atsguide button, 
+  .aicover button {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+
+/* Add this at the beginning of your CSS file */
+.superConatiner, .superContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 2000px;
+  padding-top: 190px; /* Add padding to push content below navbar */
+}
+
+/* If the navbar has a fixed height, you can be more precise */
+/* For example, if your navbar is 60px tall: */
+.superConatiner, .superContainer {
+  padding-top: 200px; /* Match your navbar height */
+}
+
+/* Rest of your existing CSS remains the same */
+
+/* For mobile responsiveness, you might want to adjust the padding */
+@media (max-width: 768px) {
+  .superConatiner, .superContainer {
+    padding-top: 50px; /* Slightly smaller padding for mobile */
+  }
+}

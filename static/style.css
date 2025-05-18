@@ -1,0 +1,642 @@
+body{
+ 
+    padding:0;
+    margin:0;
+    padding-top: 60px;
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    }
+    
+    .navbar img{
+    height:60px;
+    width: 200px;
+    position: relative;
+    left:25px;
+    
+    }
+    
+    .navbar a{
+    text-decoration: none;
+    padding:8px;
+    color:rgb(15, 14, 14);
+    font-family: "Mooli", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 17px;
+    text-align: center;
+    justify-content: center;
+    
+    }
+    .anchor{
+    display: flex;
+    gap: 30px;
+    position: relative;
+    left:40px;
+   
+    
+    }
+
+    
+    .navbar a:hover{
+    color: red;
+    
+    
+    }
+    
+    .containerd{
+    display: flex;
+    width:auto;
+    height:auto;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top:150px;
+    
+    
+    }
+    
+    form{
+    margin-top: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    flex-basis:700px;
+    height:400px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    position: relative;
+    top:-45px;
+    }
+    
+    form h1{
+    margin-bottom: 7px;
+    font-family: "Mooli", sans-serif;
+    font-size: 30px;
+    color:red;
+    text-align: center;
+    }
+    
+    .h1{
+    
+    margin-bottom: 50px;
+    
+    }
+    .uploadlabel{
+    
+    font-size: 25px;
+    font-family: "Mooli", sans-serif;
+    padding: 5px;
+    font-weight: bolder;
+    
+    
+    
+    }
+    .input-file [type="file"]{
+    color:rgb(0, 0, 0);
+    margin-left: 120px;
+    margin-top: 10px;
+    font-family: "Mooli", sans-serif;
+    font-size: 21px;
+    font-weight: bolder;
+    
+    }
+    
+    
+    
+    .input-file input::file-selector-button{
+    border:none;
+    font-family:fantasy;
+    font-size: 25px;
+    color:white;
+    background-color: red;
+    padding:7px;
+    border-radius:5px;
+    margin-bottom: 10px;
+    cursor:pointer;
+    }
+    .input-file input::file-selector-button:hover{
+    background-color: white;
+    color:red;
+    border:1px solid red;
+    cursor:pointer;
+    
+    }
+    
+    .joblabel{
+    font-size: 25px;
+    font-family: "Mooli", sans-serif;
+    font-weight: bolder;
+    padding: 5px;
+    
+    
+    
+    }
+    
+    .jobtext{
+    border: 5px solid red;
+    border-radius: 7px;
+    font-family: "Mooli", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    resize: none;
+    
+    
+    
+    }
+    
+    .submitbutton{
+    
+    border:none;
+    font-family:fantasy;
+    font-size: 25px;
+    background-color: red;
+    width:100px;
+    border-radius:5px ;
+    padding:2px;
+    color: white;
+    margin-top: 10px;
+    
+    
+    
+    
+    }
+    .submitbutton:hover{
+    
+    background-color: white;
+    color:red;
+    border:2px solid red;
+    cursor:pointer;
+    }
+    
+    .input-file{
+    display:flex;
+    justify-content: center;
+    
+    
+    }
+
+    /* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;  /* Reduced padding on mobile */
+    }
+
+    .navbar img {
+        left: 0; /* Reset left positioning */
+        margin-bottom: 10px; /* Add space below logo */
+        width: 150px; /* Reduce logo size on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .anchor {
+        flex-direction: column; /* Stack links vertically */
+        gap: 5px; /* Reduce gap between links */
+        position: relative; /* Reset positioning */
+        align-items: center; /* Center links horizontally */
+        margin-top: 10px; /* Add margin above links */
+        width: 100%; /* Full width for links container */
+        right:100px;
+        
+       
+    }
+
+    .anchor a{
+        position: relative;
+        right:40px;
+    }
+
+    .navbar a {
+        font-size: 15px; /* Reduce font size for links */
+        padding: 5px; /* Adjust padding for smaller screens */
+        text-align: center; /* Center text alignment for links */
+        
+        width: 100%; /* Make links full width for easier tapping */
+    }
+
+    
+    .accountparent{
+        position: relative;
+        right: 0;
+        padding-right: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .account-dropdown {
+        margin: 10px auto;
+    }
+}
+
+.accountparent{
+    display: flex;
+    position: relative;
+    margin-left: auto;
+    padding-right: 20px;
+    right:100px;
+}
+
+
+.account-dropdown {
+    position: relative;
+    display: flex;
+    border:3px solid red;
+    border-radius: 8px;
+    width:110px;
+    /* Remove the left property that was pushing it too far */
+}
+
+.account-btn {
+    background: white;
+    color: red;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 100%;
+}
+
+.account-btn .arrow {
+    margin-left: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: red;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 100%;
+    
+}
+
+.dropdown-menu a:hover {
+    background: lightgray;
+}
+
+.account-dropdown:hover .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    max-height: 100px; /* Set max height */
+    overflow-y: auto; /* Enable scrolling */
+    left:-14%;
+}
+
+
+.loader {
+    width: 120px;
+    height: 20px;
+    transform: skewX(-45deg);
+    background: 
+      linear-gradient(#f03355 0 0) left -30px top 0/30px 20px no-repeat 
+      #ccc;
+    animation: l3 1s infinite linear;
+    display: none; /* Initially hidden */
+  }
+  
+  @keyframes l3 {
+    100% {background-position: right -30px top 0;}
+  }
+  
+  .post-loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+}
+
+.post-loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #f3f3f3;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.post-loader-text {
+    position: absolute;
+    margin-top: 80px;
+    color: #FF3D00;
+    font-family: 'Inter', sans-serif;
+}
+
+.show-loader {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive styles for index page */
+@media screen and (max-width: 768px) {
+    .containerd {
+        width: 95%;
+        height:640px;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .upload {
+        height: auto;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .h1 h1 {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .file, .job {
+        margin: 10px 0;
+    }
+
+    .uploadlabel, .joblabel {
+        font-size: 14px;
+    }
+
+    .input-file input {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .jobtext {
+        width: 95%;
+        min-height: 100px;
+    }
+
+    .submitbutton {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .flash-message {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Tablet view */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .containerd {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .upload {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .h1 h1 {
+        font-size: 24px;
+    }
+
+    .jobtext {
+        width: 100%;
+        min-height: 120px;
+    }
+
+    .submitbutton {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: relative;
+        right:50px;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -200%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        left: 0;
+        width:100vh;
+        top:110px;
+    }
+
+    .anchor {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .anchor a {
+        margin: 0.5rem 0;
+    }
+
+    .accountparent {
+        margin: 1rem 0;
+    }
+
+    .navbar {
+        padding: 1rem;
+        justify-content: space-between;
+    }
+}
+
+.logo img {
+    height: 50px;  /* Adjust this value to match your logo's desired size */
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+
+.anchor a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.anchor a:hover {
+    color: #FF3D00;
+}
+
+@media screen and (max-width: 768px) {
+    /* Fix container centering */
+    body {
+        padding: 0;
+        margin: 0;
+        left: 0;  /* Remove left padding from body */
+    }
+
+    .containerd {
+        width: 95%;
+        height: 640px;
+        padding: 15px;
+        margin: 10px auto;
+        left: 0;  /* Remove any left positioning */
+        right: 0;
+        position: relative;
+    }
+
+    /* Fix nav-links centering */
+    .nav-links {
+        position: fixed;
+        left: -100%;  /* Changed from -200% */
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100vw;  /* Use viewport width */
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-left: 0;  /* Remove margin */
+    }
+
+    .nav-links.active {
+        left: 0;
+        width: 100%;  /* Changed from 100vh */
+        top: 110px;
+    }
+
+    /* Center anchor links */
+    .anchor {
+        flex-direction: column;
+        padding: 1rem 0;
+        left: 0;  /* Remove left positioning */
+        width: 100%;
+        align-items: center;
+    }
+
+    .anchor a {
+        margin: 0.5rem 0;
+        position: static;  /* Remove relative positioning */
+        right: 0;  /* Remove right positioning */
+        width: auto;
+    }
+
+    /* Adjust navbar padding */
+    .navbar {
+        padding: 1rem;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .accountparent {
+        position: relative;
+        right: 0;
+        left: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .account-dropdown {
+        margin: 10px auto;
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100%;
+        width: 150px;
+        text-align: center;
+    }
+
+    .account-dropdown:hover .dropdown-menu {
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+}

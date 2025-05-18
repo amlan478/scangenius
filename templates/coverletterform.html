@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>ResumeScoreAI</title>
+{% endblock title %}
+
+{% block links %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='cover.css')}}">
+{% endblock links %}
+
+{% block body %}
+<div class="containerf">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="flash-message">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <p class="heading">Craft the Perfect Cover Letter – Stand Out from the Crowd!🔥</p>
+    <form action="/coverletter" method="POST" enctype="multipart/form-data">
+        
+        <div class="formitem">
+          <img src="../static/avatar.gif" alt="Profile logo " /><input
+            type="text"
+            name="Name"
+            class="inputfield"
+            placeholder="Name"
+          />
+        </div>
+        <div class="formitem">
+          <img src="../static/email.gif" alt="Profile logo" /><input
+            type="email"
+            name="email"
+            class="inputfield"
+            placeholder="Email"
+          />
+        </div>
+        <div class="formitem">
+          <img src="../static/address.gif" alt="Profile logo" /><input
+            type="text"
+            name="address"
+            class="inputfield"
+            placeholder="Your adresss!"
+          />
+        </div>
+         <div class="formitem">
+          <img src="../static/call.gif" alt="Profile logo" /><input
+            type="text"
+            name="PhoneNo"
+            class="inputfield"
+            placeholder="Your PhoneNo"
+          />
+        </div>
+        <div class="formitem">
+          <img src="../static/date.gif" alt="Profile logo" /><input
+            type="date"
+            name="Date"
+            class="inputfield"
+            placeholder="Date"
+          />
+        </div>
+        <div class="formitem">
+          <img src="../static/hrt.gif" alt="Profile logo" /><input
+            type="text"
+            name="hiringmanager"
+            class="inputfield"
+            placeholder="Hiring Manager Name"
+          />
+        </div>
+        <div class="formitem">
+          <img src="../static/jobtitle.gif" alt="Profile logo" /><input
+            type="text"
+            name="Job-title"
+            class="inputfield"
+            placeholder="Job Title"
+          />
+        </div>
+        <div class="formitem">
+          <img src="../static/jobdesc.gif" alt="Profile logo" /><textarea
+            name="Job-Desc"
+            class="inputfield"
+            placeholder="Job Description"
+          ></textarea>
+        </div>
+        <div class="formitem">
+          <img src="../static/bui.gif" alt="Profile logo" /><input
+            type="text"
+            name="CompanyName"
+            class="inputfield"
+            placeholder="Company Name"
+          />
+        </div>
+        <div class="formitem">
+          <img src="../static/loc.gif" alt="Profile logo" /><textarea
+            name="companyAddress"
+            class="inputfield"
+            placeholder="Company Address"
+          ></textarea>
+        </div>
+        <div class="formitem">
+          <img src="../static/platform.gif" alt="Profile logo" /><input
+            type="text"
+            name="platform"
+            class="inputfield"
+            placeholder="Platform"
+          />
+        </div>
+        <div class="formitem">
+          <img src="../static/skills.gif" alt="Profile logo" /><input
+            type="text"
+            name="Skills"
+            class="inputfield"
+            placeholder="Skills"
+          />
+        </div>
+        <div class="formitem">
+          <img src="../static/int.gif" alt="Profile logo" /><textarea
+            name="interest"
+            class="inputfield"
+            placeholder="Why You are Interested for it?"
+          ></textarea>
+        </div>
+       
+        <div class="formitem">
+          
+          <div class="Resumeinput">
+            <img src="../static/file.gif" alt="Profile logo" class="covericon"/>
+            <h5>Upload Your Resume!</h5>
+            <input
+              type="file"
+              name="resume"
+              class="inputfield fileclass"
+              placeholder="Upload Resume"
+            
+            />
+          </div>
+        </div>
+        <div class="formitem">
+          <img src="../static/instructions.gif" alt="Profile logo" /><textarea
+            name="instructions"
+            class="inputfield"
+            placeholder="Any Other Special Instructions?"
+          ></textarea>
+        </div>
+      <div class="Style">
+        <h2 class="Second">Choose your Cover Letter Style!</h2>
+        <div class="buttons">
+          <button type="submit" name="style" value="formal">Formal</button>
+          <button type="submit" name="style" value="professional">
+            Professional
+          </button>
+          <button type="submit" name="style" value="casual">Casual</button>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock body %}

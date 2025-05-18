@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+    {% block title %}
+        
+    
+    <title>ResumeScoreAI</title>
+    {% endblock title %}
+
+   
+    {% block links %}
+        
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='resultstyle.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .super-container {
+                padding: 10px;
+            }
+            
+            .box {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+            
+            .result-box {
+                padding: 15px;
+            }
+            
+            .styled-list {
+                padding-left: 20px;
+            }
+            
+            .listitem {
+                margin-bottom: 10px;
+            }
+            
+            .button {
+                padding: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+    {% endblock links %}
+  {% block body %}
+    
+  
+  
+    <div class="super-container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="box">
+            <h3><span class="score-highlight">ATS Score : {{score}}</h3></span>
+            <div class="card-container">
+                <div class="card" id=>
+                    <h4>Skill Match Score:</h4><br>
+                    <p>{{skill_score}}</p>
+                </div>
+                <div class="card">
+                    <h4>Techincal Strength:</h4><br>
+                    <p>{{tech_score}}</p>
+                </div>
+                <div class="card">
+                    <h4>Keyword Match Score:</h4><br>
+                    <p>{{key_score}}</p>
+                </div>
+                <div class="card">
+                    <h4>Industry Relevance:</h4><br>
+                    <p>{{ind_score}}</p>
+                </div>
+            </div>
+            <div class="result-box">
+                <ol class="styled-list">
+                    {% for line in result.split('\n') if line.strip() %}
+                    <div class="listitem"><li>{{ line }}</li></div>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="button"><a href="/" class="btn">New Resume!</a></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('submit-btn').addEventListener('click', function() {
+    let loader = document.getElementById('loader');
+
+    // Show the loader
+    loader.style.display = 'block';
+
+    // Simulate a delay (e.g., API call, form processing)
+    setTimeout(() => {
+        loader.style.display = 'none'; // Hide after 3 seconds
+        alert("Process Complete!"); // Example action after completion
+    }, 3000);
+});
+
+    </script>
+{% endblock body %}

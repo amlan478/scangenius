@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Cover Letter</title>
+{% endblock title %}
+
+{% block links %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+{% endblock links %}
+
+{% block css %}
+<style>
+    .containerc {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+        margin-top: 10px;
+        animation: slideIn 2s ease-out;
+    }
+    
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    pre {
+        font-size: 16px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-family: 'Times New Roman', Times, serif;
+        animation: typing 3s steps(40, end) forwards, blink 0.7s infinite;
+    }
+    
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    
+    .content {
+        display: flex;
+        max-width: 700px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        border: 7px solid red;
+    }
+    
+    .content button {
+        width: 90px;
+        height: 50px;
+    }
+    
+    h2 {
+        font-family: "Mooli", sans-serif;
+    }
+    
+    span {
+        color: red;
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<div class="containerc">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="flash-message">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h2>Writing Style: <span>{{style}}</span></h2>
+    <div class="content">
+        <pre id="letter">{{coverletter}}</pre><button onclick="myFunction()">Copy</button>
+    </div>
+</div>
+<script>
+    function myFunction() {
+        var copyText = document.getElementById("letter");
+        var range = document.createRange();
+        range.selectNode(copyText);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        alert("Copied Your Cover Letter");
+        window.getSelection().removeAllRanges();
+    }
+</script>
+{% endblock body %}

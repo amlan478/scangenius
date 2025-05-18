@@ -1,0 +1,494 @@
+{% extends 'base.html' %}
+
+    {% block title %}
+        
+    
+    <title>Toggleable Dashboard</title>
+    {% endblock title %}
+
+    {% block links %}
+        
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+{% endblock links %}
+
+{% block css %}
+    
+
+    <style>
+/* General Styling */
+body {
+    font-family: 'Rubik', sans-serif;
+  
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #d84315; /* Deep Orange */
+    margin-top: 20px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #bf360c;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Category Buttons - Centered */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.buttons button {
+    padding: 12px 18px;
+    cursor: pointer;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #e64a19; /* Orange-Red */
+    color: white;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+}
+
+.buttons button:hover {
+    background-color: #d84315; /* Darker Orange */
+}
+
+/* Sections */
+.section {
+    display: none;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 6px;
+    background: white;
+}
+
+/* Active Section */
+.active {
+    display: block;
+}
+
+/* Section Headings */
+.section h3 {
+    font-size: 20px;
+    color: #bf360c;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Details Styling */
+details {
+    padding: 10px;
+    margin: 12px 0;
+    border-radius: 5px;
+    border-left: 4px solid #e64a19;
+
+    cursor: pointer;
+}
+
+summary {
+    font-weight: bold;
+    font-size: 16px;
+    color: #d84315;
+    cursor: pointer;
+    white-space: normal;
+}
+
+/* ATS & Cover Letter Details */
+.ats-details, .cover-details {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+/* Horizontal Score Display */
+/* Horizontal Score Display */
+.score-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Score Box Styling */
+.score-box {
+    flex: 1;
+    min-width: 180px;
+    margin: 5px;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: black; /* Black text for labels */
+    border-radius: 4px;
+    border: 2px solid red;
+}
+
+/* Score Number Styling */
+.score-box span {
+    color: #d32f2f; /* Bright Red */
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Highlight Animation */
+.score-box span:hover {
+    transform: scale(1.2);
+}
+
+/* Result Analysis */
+.result-analysis {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Ordered List for Result Analysis */
+.result-analysis ol {
+    list-style: none;
+    padding: 0;
+    counter-reset: list-counter;
+}
+
+.result-analysis ol li {
+    font-size: 17px;
+    padding: 10px;
+    margin: 3px 0;
+    color: #5d4037;
+    font-weight: bold;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+/* Styled Order Number */
+.result-analysis ol li::before {
+    content: counter(list-counter);
+    counter-increment: list-counter;
+    background: #d84315;
+    color: white;
+    font-weight: bold;
+    padding: 3px 8px;
+    margin-right: 8px;
+    border-radius: 3px;
+    text-align: center;
+}
+/* Cover Letter Details Styling */
+.cover-details {
+    padding: 15px;
+    border-radius: 5px;
+
+    margin-top: 8px;
+    position: relative;
+}
+
+/* Properly Formatted Cover Letter Display */
+.cover-letter {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #d84315;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+/* Copy Button Styling */
+.copy-btn {
+    padding: 10px 15px; /* Larger padding for better touch area */
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e64a19;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: block; /* Makes the button take full width */
+    position: relative; /* Helps isolate it from parent */
+    z-index: 120; /* Ensures it's on top for touch events */
+}
+
+.copy-btn:hover {
+    background-color: #d84315;
+}
+
+.Super{
+    position:relative;
+    top:100px;
+}
+
+strong{
+    white-space: normal;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .Super{
+        padding-top: 230px;
+    }
+    
+    
+    .dashboard-title {
+        width: 90%;
+        font-size: 24px;
+        margin-top: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .buttons button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .section {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .score-container {
+        flex-direction: column;
+    }
+
+    .score-box {
+        min-width: unset;
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    details summary {
+        font-size: 14px;
+    }
+
+    .result-analysis ol li {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .cover-letter {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .Super {
+        top: 70px;
+    }
+}
+
+/* Tablet View */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .dashboard-title {
+        width: 80%;
+    }
+
+    .section {
+        width: 90%;
+    }
+
+    .score-container {
+        flex-wrap: wrap;
+    }
+
+    .score-box {
+        min-width: 45%;
+        margin: 5px;
+    }
+
+    .Super {
+        top: 80px;
+    }
+}
+    </style>
+    {% endblock css %}
+
+
+    
+{% block body %}
+    
+
+
+
+
+    
+    <div class="Super">
+    <!-- Dashboard Heading -->
+<h1 class="dashboard-title">📊 Dashboard</h1>
+
+<!-- Category Buttons -->
+<div class="buttons">
+    <button onclick="showSection('ATS')">ATS Score</button>
+    <button onclick="showSection('coverletter')">Cover Letter</button>
+    <button onclick="showSection('medical')">Medical Data Extraction</button>
+</div>
+
+<!-- ATS Score Section -->
+<div id="ATS" class="section">
+    <h3>📄 ATS Scores: </h3>
+    {% if ats_records %}
+        {% for record in ats_records %}
+            <details>
+                <summary style="color:black;"><strong >  Resume:</strong> <span style="color:red">{{ record.Resume }}</span><br> <strong>Date:</strong> <span style="color:red">{{ record.created_at.strftime('%A %d %B %Y %I:%M %p') }}</span> </summary>
+                    
+                <div class="ats-details">
+                    
+                    <div class="score-container">
+                        <div class="score-box"><strong>ATS Score:</strong> {{ record.ats_score }}</div>
+                        <div class="score-box"><strong>Skill Match Score:</strong> {{ record.skill_score }}</div>
+                        <div class="score-box"><strong>Technical Strength:</strong> {{ record.tech_score }}</div>
+                        <div class="score-box"><strong>Keyword Optimization:</strong> {{ record.keyword_score }}</div>
+                        <div class="score-box"><strong>Industry Relevance:</strong> {{ record.industry }}</div>
+                    </div>
+
+                    {% if record.result.strip() %}
+                    <div class="result-analysis">
+                        <p><strong>Result Analysis:</strong></p>
+                        <ol>
+                            {% for point in record.result.split('\n') if point.strip() %}
+                                <li>{{ point }}</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                    {% endif %}
+                </div>
+            </details>
+        {% endfor %}
+    {% else %}
+        <p class="no-records">No ATS records found.</p>
+    {% endif %}
+</div>
+
+<div id="coverletter" class="section">
+    <h3>📜 Cover Letters</h3>
+
+    {% if cover_letters %}
+    {% for letter in cover_letters %}
+    <details>
+        <summary style="color:black;">
+            <strong>Cover Letter Style:</strong> <span style="color:red">{{ letter.style }}</span><br>
+            <strong style="color:rgb(0, 0, 0);">Date:</strong> 
+<span style="color:red">{{ letter.created_at | format_datetime }}</span>
+        </summary>
+        <div class="cover-details">
+            <p><strong>Generated Cover Letter:</strong></p> 
+            
+            <!-- Add a unique ID to each cover letter -->
+            <pre id="cover-letter-{{ loop.index }}" class="cover-letter">{{ letter.cover }}</pre>
+
+            <!-- Pass the ID to the copy function -->
+            <button class="copy-btn" onclick="copyCoverLetter('cover-letter-{{ loop.index }}')">📋 Copy</button>
+        </div>
+    </details>
+    {% endfor %}
+    {% else %}
+        <p>No cover letters found.</p>
+    {% endif %}
+</div>
+
+    
+
+    <div id="medical" class="section">
+        
+    </div>
+</div>
+    <!-- JavaScript -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function copyCoverLetter(id) {
+    // Prevent default behavior and event bubbling
+    event = event || window.event;
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    // Get the text by ID instead of relative position
+    let coverLetter = document.getElementById(id).innerText;
+    
+    // For debugging
+    console.log("Trying to copy:", coverLetter.substring(0, 50) + "...");
+    
+    // Use the clipboard API
+    navigator.clipboard.writeText(coverLetter)
+        .then(() => {
+            alert("Cover letter copied successfully!");
+        })
+        .catch(err => {
+            console.error("Failed to copy: ", err);
+            
+            // Fallback method for browsers that don't support clipboard API
+            fallbackCopyTextToClipboard(coverLetter);
+        });
+}
+
+// Fallback copy method for older browsers
+function fallbackCopyTextToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    
+    // Make the textarea hidden
+    textArea.style.position = "fixed";
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.width = "2em";
+    textArea.style.height = "2em";
+    textArea.style.padding = "0";
+    textArea.style.border = "none";
+    textArea.style.outline = "none";
+    textArea.style.boxShadow = "none";
+    textArea.style.background = "transparent";
+    
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            alert("Cover letter copied successfully!");
+        } else {
+            alert("Copy failed. Please try again or copy manually.");
+        }
+    } catch (err) {
+        console.error('Fallback: Unable to copy', err);
+        alert("Copy failed. Please try again or copy manually.");
+    }
+    
+    document.body.removeChild(textArea);
+}
+    </script>
+
+{% endblock body %}
