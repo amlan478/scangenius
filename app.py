@@ -374,7 +374,7 @@ def result_page():
 
 #-----------------------------------------COVER LETTER SECTION----------------------------------------------
 def generate_cover_letter(name, email, job_title, job_desc, company, skills, interest, resumetext, cover_style, address, date, hiringmanager, phone, platform,companyAddress,instructions):
-    client = genai.Client(api_key="AIzaSyDsBT3m0BCNnu_XXmaJFCrSywwzVXSVVZs")
+    client = genai.Client(api_key="gemini_api")
 
     prompt = f"""
 You are an expert in professional cover letter writing. Generate a **{cover_style} cover letter** tailored for the applicant based on the provided details. The cover letter should be **engaging, job-focused, and ATS-friendly**, ensuring it aligns well with the job description.
